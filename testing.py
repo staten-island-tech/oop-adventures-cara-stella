@@ -13,19 +13,29 @@ tophat = "tophat"
 necklace = "necklace"
 crown = "crown"
 
+def firstroom():
+    if firstroom == "room one":
+            print(f"You search through the room, quickly realizing it is a kitchen. Somehow, you find a {frog}")
+            pickup = input("Do you want to pick the item up, if you believe it is the required item?")
+            if pickup == "yes":
+                if obj == "frog":
+                    print("Congratulations, you have won the game.")
+                    quit()
 
-firsthallway = input("There are two hallways to walk down.  Which do you choose?")
+
+firsthallway = input("There are three hallways to walk down.  Which do you choose?")
 
 if firsthallway == "hallway one":
     print("As you walk down the eerie hallway, you realize that you can enter three rooms.")
     firstroom = input("Which do you choose to enter first?")
     if firstroom == "room one":
-        print(f"You search through the room, quickly realizing it is a kitchen. Somehow, you find a {frog}")
-        pickup = input("Do you want to pick the item up, if you believe it is the required item?")
-        if pickup == "yes":
-            if obj == "frog":
-                print("Congratulations, you have won the game.")
-                quit()
+        if firstroom == "room one":
+            print(f"You search through the room, quickly realizing it is a kitchen. Somehow, you find a {frog}")
+            pickup = input("Do you want to pick the item up, if you believe it is the required item?")
+            if pickup == "yes":
+                if obj == "frog":
+                    print("Congratulations, you have won the game.")
+                    quit()
     if firstroom == "room two":
         print(f"This room appears to be a master bedroom, unoccupied for a while now. After searching, you find an old {necklace}")
         pickup = input("Do you want to pick the item up, if you believe it is the required item?")
@@ -33,6 +43,8 @@ if firsthallway == "hallway one":
             if obj == "necklace":
                 print("Congratulations, you have won the game.")
                 quit()
+        else:
+            if o
     if firstroom == "room three":
         print(f"This room is clearly the living room. You find a {tophat}")
         pickup = input("Do you want to pick the item up, if you believe it is the required item?")
@@ -50,34 +62,7 @@ if firsthallway == "hallway two":
             if obj == "crown":
                 print("Congratulations, you have won the game.")
                 quit()
-            elif obj != "crown" or pickup == "no":
-                print("Proceed to next chosen room.")
-                secondroom = input("Which room do you want to try, excluding the first room?")
-                if secondroom == "room two":
-                    print(f"The door creaks open, making a dusty wooden desk visible. Opening the drawer, you find a {book}")
-                    pickup = input("Do you want to pick the item up, if you believe it is the required item?")
-                    if pickup == "yes":
-                        if obj == "book":
-                            print("Congratulations, you have won the game.")
-                            quit()
-    if firstroom == "room two":
-        print(f"The door creaks open, making a dusty wooden desk visible. Opening the drawer, you find a {book}")
-        pickup = input("Do you want to pick the item up, if you believe it is the required item?")
-        if pickup == "yes":
-            if obj == "book":
-                print("Congratulations, you have won the game.")
-                quit()
-    if firstroom == "room three":
-        print(f"The next room is the guest bedroom, and you find a fragile {vase}"
-        pickup = input("Do you want to pick the item up, if you believe it is the required item?")
-        if pickup == "yes":
-            if obj == "vase":
-                print("Congratulations, you have won the game.")
-                quit()
-
-
-
-
-
-
+         
+                
+            	           
 
