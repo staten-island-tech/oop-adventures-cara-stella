@@ -22,20 +22,23 @@ def firstroom():
                     print("Congratulations, you have won the game.")
                     quit()
 
-
-firsthallway = input("There are three hallways to walk down.  Which do you choose?")
-
-if firsthallway == "hallway one":
-    print("As you walk down the eerie hallway, you realize that you can enter three rooms.")
-    firstroom = input("Which do you choose to enter first?")
+firstroom
+       
+def firstroom():
     if firstroom == "room one":
-        if firstroom == "room one":
             print(f"You search through the room, quickly realizing it is a kitchen. Somehow, you find a {frog}")
             pickup = input("Do you want to pick the item up, if you believe it is the required item?")
             if pickup == "yes":
                 if obj == "frog":
                     print("Congratulations, you have won the game.")
                     quit()
+firsthallway = input("There are three hallways to walk down.  Which do you choose?")
+
+if firsthallway == "hallway one":
+    print("As you walk down the eerie hallway, you realize that you can enter three rooms.")
+    firstroom = input("Which do you choose to enter first?")
+    if firstroom == "room one":
+        firstroom()
     if firstroom == "room two":
         print(f"This room appears to be a master bedroom, unoccupied for a while now. After searching, you find an old {necklace}")
         pickup = input("Do you want to pick the item up, if you believe it is the required item?")
@@ -43,8 +46,9 @@ if firsthallway == "hallway one":
             if obj == "necklace":
                 print("Congratulations, you have won the game.")
                 quit()
-        else:
-            if o
+        if pickup != "yes":
+                print("You return to the first room.")
+                firstroom
     if firstroom == "room three":
         print(f"This room is clearly the living room. You find a {tophat}")
         pickup = input("Do you want to pick the item up, if you believe it is the required item?")
