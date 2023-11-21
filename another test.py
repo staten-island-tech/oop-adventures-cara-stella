@@ -12,14 +12,14 @@ briefcase = 'briefcase'
 tophat = "tophat"
 necklace = "necklace"
 crown = "crown"
-#x = print(f"You search through the room. Somehow, you find a frog")  
+  
 x = "frog"
 b = "necklace"
 y = "tophat"
 
-
+add = "...seeing that it is a guest room,"
 def roomthree():
-            print(f"You search through the room and find a {y}")
+            print(f"You search through the room {add} and find a {y}")
             pickup = input("Do you want to pick the item up, if you believe it is the required item?")
             if pickup != "yes":
                 print("Move to room three")
@@ -31,7 +31,8 @@ def roomthree():
                 if obj != x:
                      print("You lost. Womp womppp")
 def roomtwo():
-            print(f"You search through the room and find a {b}")
+            add = " - its the master bedroom, once magnificent but now covered in dust,"
+            print(f"You search through the room {add} and find a {b}")
             pickup = input("Do you want to pick the item up, if you believe it is the required item?")
             if pickup != "yes":
                 print("move to room three")
@@ -55,7 +56,7 @@ def roomone():
                 if obj != x:
                      print("You lost. Womp womppp")
 
-     
+
 
 firsthallway = input("There are three hallways to walk down.  Which do you choose?")
 
@@ -72,7 +73,7 @@ if firsthallway == "hallway two":
     print("As you walk down the colorful hallway that reminds you of candyland, you realize you can enter three rooms.")
     firstroom = input("Which do you choose to enter first?")
     if firstroom == "room one":
-        x = "crown of King Michael Whalen"
+        x = crown
         roomone()
     if firstroom == "room two":
         b = book
