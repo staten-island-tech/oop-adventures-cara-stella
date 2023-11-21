@@ -17,9 +17,8 @@ x = "frog"
 b = "necklace"
 y = "tophat"
 
-add = "...seeing that it is a guest room,"
 def roomthree():
-            print(f"You search through the room {add} and find a {y}")
+            print(f"You search through the room and find a {y}")
             pickup = input("Do you want to pick the item up, if you believe it is the required item?")
             if pickup != "yes":
                 print("Move to room three")
@@ -31,8 +30,8 @@ def roomthree():
                 if obj != x:
                      print("You lost. Womp womppp")
 def roomtwo():
-            add = " - its the master bedroom, once magnificent but now covered in dust,"
-            print(f"You search through the room {add} and find a {b}")
+            
+            print(f"You search through the room and find a {b}")
             pickup = input("Do you want to pick the item up, if you believe it is the required item?")
             if pickup != "yes":
                 print("move to room three")
