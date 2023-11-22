@@ -3,26 +3,42 @@ import random
 obj = random.choice(['vase','book','frog', 'umbrella','spatula', ' briefcase', 'top hat', 'necklace', 'crown' ])
 print(f"You are required to find {obj} within the house. Good luck.")
 
-vase = "vase"
-book = "book"
-frog = "frog"
-umbrella = "umbrella"
-spatula = "spatula"
-briefcase = 'briefcase'
-tophat = "tophat"
-necklace = "necklace"
-crown = "crown"
+#object class
+#vase = "vase"
+#book = "book"
+#frog = "frog"
+#umbrella = "umbrella"
+#spatula = "spatula"
+#briefcase = 'briefcase'
+#tophat = "tophat"
+#necklace = "necklace"
+#crown = "crown"
   
-x = "frog"
-b = "necklace"
-y = "tophat"
 
+# hallway class?
+def secondhallway():
+    print("As you walk down the colorful hallway that reminds you of candyland, you realize you can enter three rooms.")
+    firstroom = input("Which do you choose to enter first?")
+    if firstroom == "room one":
+        x = "crown"
+        roomone()
+        return x
+    if firstroom == "room two":
+        b = "book"
+        roomtwo()
+        return b
+    if firstroom == "room three":
+        y = "vase"
+        roomthree()
+        return y
+# rooms class
+# add var in ()?
 def roomthree():
             print(f"You search through the room and find a {y}")
             pickup = input("Do you want to pick the item up, if you believe it is the required item?")
             if pickup != "yes":
-                print("Move to room three")
-                roomthree()
+                print("Move to the next hallway: hallway two.")
+                secondhallway()
             if pickup == "yes":
                 if obj == y:
                     print("Congratulations, you have won the game.")
@@ -30,7 +46,6 @@ def roomthree():
                 if obj != x:
                      print("You lost. Womp womppp")
 def roomtwo():
-            add = " - its the master bedroom, once magnificent but now covered in dust,"
             print(f"You search through the room and find a {b}")
             pickup = input("Do you want to pick the item up, if you believe it is the required item?")
             if pickup != "yes":
@@ -72,11 +87,22 @@ if firsthallway == "hallway two":
     print("As you walk down the colorful hallway that reminds you of candyland, you realize you can enter three rooms.")
     firstroom = input("Which do you choose to enter first?")
     if firstroom == "room one":
-        x = crown
+        x = "crown"
         roomone()
     if firstroom == "room two":
-        b = book
+        b = "book"
         roomtwo()
     if firstroom == "room three":
-         y = vase
+         y = "vase"
          roomthree()
+if firsthallway == "hallway three":
+     print("This hallway is surpisingly normal, nothing out of the ordinary or especially creative. You know this one, like the others, has three rooms.")
+     firstroom = input("Which do you choose to enter first?")
+     if firstroom == "room one":
+          x = "umbrella"
+          roomone()
+     if firstroom == "room two":
+          b = "spatula"
+     if firstroom == "room three":
+          y = "briefcase"
+        
