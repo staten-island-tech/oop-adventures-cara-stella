@@ -81,4 +81,7 @@ if firsthallway == "hallway two":
 
 
 
-
+class Room(self, number, items, message)
+Room_one = Room(1, ["Vase", "Wallet"])
+Room_one["get_item"] = def print(crown):
+                        print(f"This is the bathroom. You somehow find a {crown} belonging to King Michael Whalen the First.")
