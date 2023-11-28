@@ -105,4 +105,5 @@ if firsthallway == "hallway three":
           b = "spatula"
      if firstroom == "room three":
           y = "briefcase"
-        
+
+#hallway 

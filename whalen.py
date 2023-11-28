@@ -15,3 +15,9 @@ class Room_one(Room):
 item = "Frog"
 room_one = Room_one(1, ["Frog", "Comb"])
 room_one.message(item)
+
+class Room_two(Room):
+        def __init__self(self, number, items):
+                super().__init__(number, items)
+        def message(self, item):
+                print(f"")
