@@ -24,6 +24,7 @@ class Room_two(Room):
                 pickup = input("Do you want to pick the item up, if you believe it is the required item?")
                 if pickup == "yes":
                         print("Congratulations, you have won the game.")
+                        
 item = "necklace"
 hallway = 1
 room_two = Room_two(2, [1, 2, 3], ["necklace", "briefcase", "crown"])
@@ -33,7 +34,7 @@ class Room_three(Room):
         def __init__self(self, number, hallway, items):
                 super().__init__(number, hallway, items)
         def message(self, item):
-                print(f"This is obviously the bathroom, and an elaborate one at that. Who needs four showers? You find {item}")
+                print(f"This is obviously the bathroom, and an elaborate one at that. You find {item}")
                 pickup = input("Do you want to pick the item up, if you believe it is the required item?")
                 if pickup == "yes":
                         print("Congratulations, you have won the game.")

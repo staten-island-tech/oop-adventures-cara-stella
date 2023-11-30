@@ -4,3 +4,6 @@ class player:
         self.inventory = inventory
     def pickup(self, item):
         self.inventory.append(item)
+        print(self.inventory)
+
+
