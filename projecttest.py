@@ -13,6 +13,7 @@ tophat = "tophat"
 necklace = "necklace"
 crown = "crown"
 
+#BEING CHANGED EDITING
 
 
 firsthallway = input("There are two hallways to walk down.  Which do you choose?")
