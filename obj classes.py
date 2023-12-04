@@ -11,6 +11,9 @@ class vase(obj):
         def __str__(self):
             return f"{self.color},{self.size}, {self.design}"
 
+vase = vase("bathroom vase", "pink", "medium", "flowers")
+
+
 class briefcase(obj):
     def __init__(self, color, size, material):
         super().__init__(color, size)
@@ -57,4 +60,11 @@ class umbrella(vase):
         super().__init__(color, size, design)
         def __str__(self):
             return f"{self.color},{self.size}, {self.design}"
+
+
+
+
+
+
+
 
