@@ -2,7 +2,6 @@ import random
 obj = random.choice(['vase','book','frog', 'umbrella','spatula', ' briefcase', 'top hat', 'necklace', 'crown' ])
 print(f"You are required to find {obj} within the house. Good luck.")
 
-item = 'hi'
 
 class Room():
         def __init__(self, hallway):
@@ -20,8 +19,9 @@ class Room_one(Room):
 #room_one = Room_one(1, ["frog", "spatula", "book"]) # replace spatula in second hallway room one
 #room_one.message(item, hallway)
 room_one_one = Room_one(1, item = ["frog"]) # i added the item = but lets see if it works
-print(room_one_one.item)
+
 room_two_one = Room_one(1, ["spatula"])
+print(room_two_one.item)
 room_three_one = Room_one(1, ["book"])
 
 class Room_two(Room):
