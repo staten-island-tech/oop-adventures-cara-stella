@@ -21,15 +21,15 @@ class Room_one(Room):
 room_one_one = Room_one(1, item = ["frog"]) # i added the item = but lets see if it works
 
 room_two_one = Room_one(1, item = ["spatula"])
-print(room_two_one.item)
-room_three_one = Room_one(1, ["book"])
+#print(room_two_one.item)
+room_three_one = Room_one(1, item = ["book"])
 
 class Room_two(Room):
         def __init__(self, hallway, item):
                 super().__init__(hallway)
                 self.item = item
-        def message(self, item):
-                print(f"You hesitantly open the door, to find a master bedroom. With a few minutes of searching you find an {item}")
+        def message(self):
+                print(f"You hesitantly open the door, to find a master bedroom. With a few minutes of searching you find an {self.item}")
                 #pickup = input("Do you want to pick the item up, if you believe it is the required item?")
                 #if pickup == "yes":
                 #        print("Congratulations, you have won the game.")
@@ -39,9 +39,10 @@ class Room_two(Room):
 #room_two = Room_two(2, [1, 2, 3], ["necklace", "briefcase", "crown"])
 #room_two.message(item, hallway)
 
-room_one_two = Room_two(2, ['necklace'])
-room_two_two = Room_two(2, ["briefcase"])
-room_three_two = Room_two(2, ["crown"])
+room_one_two = Room_two(2, 'necklace')
+room_one_two.message()
+room_two_two = Room_two(2, "briefcase")
+room_three_two = Room_two(2, "crown")
 
 class Room_three(Room):
         def __init__(self, hallway, item):
@@ -71,9 +72,34 @@ def pick_up():
                 print (item)
                 if item == obj:
                         print("You have won the game, congratulations.")
+                if item != obj:
+                        print("You have lost. The game has ended.")
         if pick_up == "no":
-               print("choose a different room to go into.")
-               
+                hchoice = input(print("Choose a different hallway to travel down."))
+                if hchoice == "one":
+                        rchoice = input(print("Choose a room - one, two, or three. Remember you may have already travelled inside some."))
+                        if rchoice == "one":
+                                room_one_one #fix the rooms bc i want the code to run but the item to change per each room in same hallway
+                        if rchoice == "two":
+                                room_two_one
+                        if rchoice == "three":
+                                room_three_one
+                elif hchoice == "two":
+                        if rchoice == "one":
+                                room_one_two #same for these
+                        if rchoice == "two":
+                                room_two_two
+                        if rchoice == "three":
+                                room_three_two
+                elif hchoice == "three":
+                        if rchoice == "one":
+                                room_one_three #and these
+                        if rchoice == "two":
+                                room_two_three
+                        if rchoice == "three":
+                                room_three_three
+        
+
 
                 
 
