@@ -12,7 +12,7 @@ class Room_one(Room):
                 self.item = item
         def message(self, item):
                 print(f"You search through the room, quickly realizing it is a kitchen. Somehow, you find a {item}")
-                
+
 
 #item = "frog"
 #hallway = 1
@@ -20,7 +20,7 @@ class Room_one(Room):
 #room_one.message(item, hallway)
 room_one_one = Room_one(1, item = ["frog"]) # i added the item = but lets see if it works
 
-room_two_one = Room_one(1, ["spatula"])
+room_two_one = Room_one(1, item = ["spatula"])
 print(room_two_one.item)
 room_three_one = Room_one(1, ["book"])
 
@@ -62,13 +62,20 @@ room_two_three = Room_three(3, ["vase"])
 room_three_three = Room_three(3, ["umbrella"])
 
 
+item = []
 
-
-""" def pick_up():
-        print("If you believe this is the required item, will you pick it up?")
+def pick_up():
+        pick_up = print("If you believe this is the required item, will you pick it up?")
         if pick_up == "yes":
-                if 
+                item.append
+                print (item)
+                if item == obj:
+                        print("You have won the game, congratulations.")
+        if pick_up == "no":
+               print("choose a different room to go into.")
+               
 
- """
+                
+
 
 
