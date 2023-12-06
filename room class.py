@@ -11,7 +11,7 @@ class Room_one(Room):
                 super().__init__(hallway)
                 self.item = item
         def message(self):
-                print(f"You search through the room, quickly realizing it is a kitchen. Somehow, you find a {item}")
+                print(f"You search through the room, quickly realizing it is a kitchen. Somehow, you find a {self.item}")
 
 
 #item = "frog"
@@ -49,7 +49,7 @@ class Room_three(Room):
                 super().__init__(hallway)
                 self.item = item
         def message(self):
-                print(f"This is obviously the bathroom, and an elaborate one at that. You find {item}")
+                print(f"This is obviously the bathroom, and an elaborate one at that. You find {self.item}")
                 pickup = input("Do you want to pick the item up, if you believe it is the required item?")
                 if pickup == "yes":
                         print("Congratulations, you have won the game.")
@@ -108,7 +108,8 @@ def pick_up():
                                 room_three_three.message()
                                 pick_up()
 
-
+print(room_three_three.message)
+pick_up()
 
                 
 
