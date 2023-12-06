@@ -10,7 +10,7 @@ class Room_one(Room):
         def __init__(self,  hallway, item):
                 super().__init__(hallway)
                 self.item = item
-        def message(self, item):
+        def message(self):
                 print(f"You search through the room, quickly realizing it is a kitchen. Somehow, you find a {item}")
 
 
@@ -40,7 +40,7 @@ class Room_two(Room):
 #room_two.message(item, hallway)
 
 room_one_two = Room_two(2, 'necklace')
-room_one_two.message()
+#room_one_two.message()
 room_two_two = Room_two(2, "briefcase")
 room_three_two = Room_two(2, "crown")
 
@@ -48,7 +48,7 @@ class Room_three(Room):
         def __init__(self, hallway, item):
                 super().__init__(hallway)
                 self.item = item
-        def message(self, item):
+        def message(self):
                 print(f"This is obviously the bathroom, and an elaborate one at that. You find {item}")
                 pickup = input("Do you want to pick the item up, if you believe it is the required item?")
                 if pickup == "yes":
@@ -66,7 +66,7 @@ room_three_three = Room_three(3, ["umbrella"])
 item = []
 
 def pick_up():
-        pick_up = print("If you believe this is the required item, will you pick it up?")
+        pick_up = input(print("If you believe this is the required item, will you pick it up?"))
         if pick_up == "yes":
                 item.append
                 print (item)
@@ -79,26 +79,35 @@ def pick_up():
                 if hchoice == "one":
                         rchoice = input(print("Choose a room - one, two, or three. Remember you may have already travelled inside some."))
                         if rchoice == "one":
-                                room_one_one #fix the rooms bc i want the code to run but the item to change per each room in same hallway
+                                room_one_one.message()
+                                pick_up()
                         if rchoice == "two":
-                                room_two_one
+                                room_two_one.message()
+                                pick_up()
                         if rchoice == "three":
-                                room_three_one
+                                room_three_one.message()
+                                pick_up()
                 elif hchoice == "two":
                         if rchoice == "one":
-                                room_one_two #same for these
+                                room_one_two.message()
+                                pick_up()
                         if rchoice == "two":
-                                room_two_two
+                                room_two_two.message()
+                                pick_up()
                         if rchoice == "three":
-                                room_three_two
+                                room_three_two.message()
+                                pick_up()
                 elif hchoice == "three":
                         if rchoice == "one":
-                                room_one_three #and these
+                                room_one_three.message()
+                                pick_up()
                         if rchoice == "two":
-                                room_two_three
+                                room_two_three.message()
+                                pick_up()
                         if rchoice == "three":
-                                room_three_three
-        
+                                room_three_three.message()
+                                pick_up()
+
 
 
                 
