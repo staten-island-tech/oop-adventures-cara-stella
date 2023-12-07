@@ -92,6 +92,7 @@ def pick_up():
                                 room_three_one.message()
                                 pick_up()
                 if hchoice == "two":
+                        rchoice = input(("Choose a room - one, two, or three. Remember you may have already travelled inside some."))
                         if rchoice == "one":
                                 room_one_two.message()
                                 pick_up()
@@ -102,6 +103,7 @@ def pick_up():
                                 room_three_two.message()
                                 pick_up()
                 if hchoice == "three":
+                        rchoice = input(("Choose a room - one, two, or three. Remember you may have already travelled inside some."))
                         if rchoice == "one":
                                 room_one_three.message()
                                 pick_up()
@@ -111,7 +113,7 @@ def pick_up():
                         if rchoice == "three":
                                 room_three_three.message()
                                 pick_up()
-#print("King Michael stares you down, and you decide to find the item in order to return your grandma to her nursing home.")
+
 #room_three_three.message()
 pick_up()
 
