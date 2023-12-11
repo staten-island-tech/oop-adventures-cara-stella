@@ -83,3 +83,5 @@ def pick_up(item):
                 hchoice = toNum(input(("Choose a different hallway to travel down.")))
                 rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
                 allrooms[hchoice -1][rchoice -1].message()
+
+
