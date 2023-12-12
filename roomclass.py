@@ -84,4 +84,3 @@ def pick_up(item):
                 rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
                 allrooms[hchoice -1][rchoice -1].message()
 
-
