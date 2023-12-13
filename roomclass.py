@@ -56,7 +56,7 @@ class Room_three(Room):
 #room_three = Room_three(3, [1, 2, 3], ["tophat", "vase", "unbrella"])
 #room_two.message(item, hallway)
 
-
+global r
 roomsthree = [Room_three(3, item = 'tophat'), Room_three(3, item = "vase"), Room_three(3, item = "umbrella")]
 allrooms = [roomsone, roomstwo, roomsthree]
 itemlist = []
@@ -83,4 +83,6 @@ def pick_up(item):
                 hchoice = toNum(input(("Choose a different hallway to travel down.")))
                 rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
                 allrooms[hchoice -1][rchoice -1].message()
+
+
 
