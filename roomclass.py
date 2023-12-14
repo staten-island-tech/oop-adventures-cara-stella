@@ -56,12 +56,13 @@ class Room_three(Room):
 #room_three = Room_three(3, [1, 2, 3], ["tophat", "vase", "unbrella"])
 #room_two.message(item, hallway)
 
-global r
+
 roomsthree = [Room_three(3, item = 'tophat'), Room_three(3, item = "vase"), Room_three(3, item = "umbrella")]
 allrooms = [roomsone, roomstwo, roomsthree]
 itemlist = []
 # the problem is that the variable "item" below is not defined. How do I make self.item be recognized?
 def toNum(inp):
+        r = 0
         if inp == "one":
                 r = 1
         elif inp == "two":
