@@ -1,8 +1,6 @@
 import random
-from roomclass import Room
-from roomclass import Room_one
-from roomclass import toNum
-from roomclass import pick_up
+from roomclass import *
+
 # testing to see if the new code works here, not actual game
 print("You were strolling on a walk with your grandmother when suddenly a rainbow van with frog blocks your path.")
 print("You blink for one second, and suddenly, your grandmother is gone.")
@@ -19,8 +17,11 @@ if a == "yes":
     print(f"You are required to find {obj} within the house. Good luck.")
 
     n = toNum(input("what hallway do you want to travel down?"))
-    if n == 1: #type out "one"
-        print 
+    rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
+    #print(n)
+    #print(rchoice)
+    allrooms[n -1][rchoice -1].message()
+
 
         
 #if a == "no":

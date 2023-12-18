@@ -79,7 +79,7 @@ def toNum(inp):
 def pick_up(item):
         pick_up = input(("If you believe this is the required item, will you pick it up?"))
         if pick_up == "yes":
-                itemlist.append()
+                itemlist.append(item)
                 print(item)
                 if item == obj:
                         print("You have won the game, congratulations.")

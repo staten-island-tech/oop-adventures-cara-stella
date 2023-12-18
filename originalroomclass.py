@@ -21,7 +21,6 @@ room_two_one = Room_one(1, item = "spatula")
 #print(room_two_one.item)
 room_three_one = Room_one(1, item = "book")
 
-roomsone = [Room_one(1, item = "frog"), Room_one(1, item = "spatula"), Room_one(1, item = "book")]
 class Room_two(Room):
         def __init__(self, hallway, item):
                 super().__init__(hallway)
