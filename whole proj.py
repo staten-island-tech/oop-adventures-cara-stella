@@ -1,5 +1,9 @@
 import random
 from roomclass import *
+from userclass import *
+#from theobjclasscode import *
+name = input("Choose your character's name.")
+user1 = player(name, []) #check this
 
 # testing to see if the new code works here, not actual game
 print("You were strolling on a walk with your grandmother when suddenly a rainbow van with frogs blocks your path.")

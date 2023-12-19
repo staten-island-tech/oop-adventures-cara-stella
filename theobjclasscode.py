@@ -4,7 +4,7 @@ class obj():
         self.color = color
         self.size = size
         self.charecteristic = charecteristic
-
+# do we use this???
 Vase = obj("blue", "medium size","floral design")
 print(Vase.color, Vase.size, Vase.charecteristic)
 Briefcase = obj("black","small size","leather material")
