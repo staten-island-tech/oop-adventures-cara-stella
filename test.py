@@ -24,9 +24,9 @@ if a == "yes":
 
 
         
-#if a == "no":
- #   print("byebye grandma :)")
-  #  exit()
+if a == "no":
+    print("Then I guess you won't be getting your grandma back.")
+    exit()
 
 
 
