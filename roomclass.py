@@ -80,11 +80,10 @@ def pick_up(item):
         pick_up = input(("If you believe this is the required item, will you pick it up?"))
         if pick_up == "yes":
                 itemlist.append(item)
-                player.add #check
                 print(item)
                 if item == obj:
                         print("You have won the game, congratulations. Now for the end credits.")
-                        item_found
+                        #item_found()
                 else:
                         print("You have lost. The game has ended.")
                 exit()
@@ -95,6 +94,7 @@ def pick_up(item):
 
 
 
-def item_found():
-        print("Sighing with relief, you bring the item outside. He's waiting expectantly for you.")
+#def item_found():
+ #       print("Sighing with relief, you bring the item outside. He's waiting expectantly for you.")
+  #      print("You hear a familiar voice yell your name.")
         
