@@ -83,7 +83,7 @@ def pick_up(item):
                 print(item)
                 if item == obj:
                         print("You have won the game, congratulations. Now for the end credits.")
-                        #item_found()
+                        item_found()
                 else:
                         print("You have lost. The game has ended.")
                 exit()
@@ -92,6 +92,9 @@ def pick_up(item):
                 if c == "yes":
                         global hchoice
                         hchoice = toNum(input(("Choose a different hallway to travel down.")))
+                        if hchoice != "one" or hchoice != "two" or hchoice != "three":
+                                print("Error, please pick an actual hallway.") #check this
+                                pick_up()
                         rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
                         allrooms[hchoice -1][rchoice -1].message()
                 if c == "no":
@@ -100,7 +103,7 @@ def pick_up(item):
 
 
 
-#def item_found():
- #       print("Sighing with relief, you bring the item outside. He's waiting expectantly for you.")
-  #      print("You hear a familiar voice yell your name.")
+def item_found():
+        print("Sighing with relief, you bring the item outside. He's waiting expectantly for you.")
+        print("You hear a familiar voice yell your name.")
         

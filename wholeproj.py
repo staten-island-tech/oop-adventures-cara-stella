@@ -21,6 +21,9 @@ if a == "yes":
     print(f"You are required to find {obj} within the house. Good luck.")
     print("Before long, the mansion comes into sight. The door is unlocked.")
     hchoice = toNum(input("what hallway do you want to travel down?"))
+    if hchoice != "one" or hchoice != "two" or hchoice != "three":
+        print("Error, please pick an actual hallway.") #check this
+        pick_up()
     rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
     #print(n)
     #print(rchoice)
