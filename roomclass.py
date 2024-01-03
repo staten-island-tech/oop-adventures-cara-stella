@@ -88,9 +88,15 @@ def pick_up(item):
                         print("You have lost. The game has ended.")
                 exit()
         if pick_up == "no":
-                hchoice = toNum(input(("Choose a different hallway to travel down.")))
-                rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
-                allrooms[hchoice -1][rchoice -1].message()
+                c = input("Would you like to travel down a different hallway? If no, you will stay in current hallway and pick different room.")
+                if c == "yes":
+                        global hchoice
+                        hchoice = toNum(input(("Choose a different hallway to travel down.")))
+                        rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
+                        allrooms[hchoice -1][rchoice -1].message()
+                if c == "no":
+                        return (hchoice)
+
 
 
 
