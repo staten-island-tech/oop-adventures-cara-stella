@@ -1,6 +1,9 @@
 import random
-obj = random.choice(['vase','book','frog', 'umbrella','spatula', ' briefcase', 'tophat', 'necklace', 'crown' ])
-print(f"You are required to find {obj} within the house. Good luck.")
+
+def choosing():
+        global obj
+        obj = random.choice(['vase','book','frog', 'umbrella','spatula', 'briefcase', 'tophat', 'necklace', 'crown' ])
+        print(f"You are required to find {obj} within the house. Good luck.")
 
 from userclass import *
 class Room():
@@ -76,13 +79,14 @@ def toNum(inp):
         elif inp == "three":
                 r = 3
         return r
+
 def pick_up(item):
         pick_up = input(("If you believe this is the required item, will you pick it up?"))
         if pick_up == "yes":
-                itemlist.append(item)
-                print(item)
+                #itemlist.append(item)
+                print(item,obj) #checking
                 if item == obj:
-                        print("You have won the game, congratulations. Now for the end credits.")
+                        print("You have won the game, congratulations.")
                         item_found()
                 else:
                         print("You have lost. The game has ended.")
@@ -90,20 +94,47 @@ def pick_up(item):
         if pick_up == "no":
                 c = input("Would you like to travel down a different hallway? If no, you will stay in current hallway and pick different room.")
                 if c == "yes":
-                        global hchoice
                         hchoice = toNum(input(("Choose a different hallway to travel down.")))
                         if hchoice != "one" or hchoice != "two" or hchoice != "three":
                                 print("Error, please pick an actual hallway.") #check this
                                 pick_up()
                         rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
                         allrooms[hchoice -1][rchoice -1].message()
-                if c == "no":
-                        return (hchoice)
+                #if c == "no":
+                #       return (hchoice)
 
 
-
+goldcoin = int #idea for reward system
 
 def item_found():
-        print("Sighing with relief, you bring the item outside. He's waiting expectantly for you.")
-        print("You hear a familiar voice yell your name.")
+        print("Sighing with relief, they bring the item outside. He's waiting expectantly for them.")
+        print("You hear a familiar voice yell your name and turn to see your grandmother, unharmed.")
+        global c
+        c = input("Overcome with anger, do you... a) attempt to attack him or b) take your grandmother and leave? Enter 'a' or 'b'")
+        murder()
         
+        
+def murder():
+        if c == "a":
+                print("Your bravery is commended by the Gods! You have earned one gold coin.")
+
+        elif c == "b":
+                print("One gold coin lost for cowardice.")
+
+        else:
+                print("Please make a valid choice.")
+                item_found()
+        
+def room_choice():
+        #originally toNum again instead of int
+        hchoice = int(input("what hallway do you want to travel down? One, two, or three?"))
+        if hchoice != "one" or hchoice != "two" or hchoice != "three":
+                print("Too many errors. Game has ended.")
+                quit()
+        else:
+                rchoice = int(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
+                allrooms[hchoice -1][rchoice -1].message()
+
+
+
+
