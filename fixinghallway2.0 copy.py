@@ -157,7 +157,8 @@ def murder():
         else:
                 print("my error")
                 quit()
-        
+
+
 
 #import random
 #from roomclass import *
