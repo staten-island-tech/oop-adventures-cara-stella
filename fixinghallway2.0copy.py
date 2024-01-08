@@ -142,6 +142,7 @@ def murder():
         weapon_number = random.randint(1, 100)
         if 1<= weapon_number <= 30:
                print("You have a rock.")
+               selected_weapon = "rock"
                 #separate function for rock fight
         if 31<= weapon_number <= 60:
                print("You have a rope.")

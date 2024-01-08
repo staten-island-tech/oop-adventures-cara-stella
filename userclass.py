@@ -1,3 +1,5 @@
+from weapon1enemy1 import *
+
 class player:
     def __init__(self, name, inventory):
         self.name = name
@@ -5,5 +7,9 @@ class player:
     def add(self, item):
         self.inventory.append(item)
         print(self.inventory)
+    def attack():
+        random
+        
+        
 
 
