@@ -26,11 +26,11 @@ if a == "yes":
     print("Before long, the mansion comes into sight. The door is unlocked.")
     # toNum was b/w = and (input
     hchoice = toNum(input("what hallway do you want to travel down? one, two, or three?")) #originally letters not num
-    if hchoice != "1" or hchoice != "2" or hchoice != "3":
+    if hchoice not in [1, 2, 3]:
         print("Error, please pick an actual hallway.") #check this
         print (hchoice)
         room_choice()
-    elif hchoice == 1 or hchoice == "2" or hchoice == "3":
+    elif hchoice == [1,2,3]:
         #another toNum = and (
         rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
         #print(hchoice)
