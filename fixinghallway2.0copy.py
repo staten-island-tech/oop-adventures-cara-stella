@@ -145,8 +145,8 @@ def murder():
         if 1<= weapon_number <= 30:
                print("You have a rock.")
                 #separate function for rock fight
-               
                player.attack(rock)
+
         if 31<= weapon_number <= 60:
                print("You have a rope.")
                 #separate function for rope fight
