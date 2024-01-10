@@ -8,7 +8,8 @@ class player:
         self.inventory.append(item)
         print(self.inventory)
     def attack(rock): #like this?
-        print(f"{King_M.health - rock.damage}")
+        King_M.health = King_M.health - rock.damage
+        print(f"{King_M.health}")
         
     def attack(rope):
         King_M.health - 10
