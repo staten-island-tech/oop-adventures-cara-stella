@@ -8,18 +8,20 @@ class player:
         self.inventory.append(item)
         print(self.inventory)
     def attack(rock): #like this?
-        King_M.health - 5
-        print(King_M.health)
+        print(f"{King_M.health - rock.damage}")
+        
     def attack(rope):
         King_M.health - 10
-        print(f"Health lowered to {King_M.health}")
+        #print(f"Health lowered to {King_M.health}")
+        print(King_M.health)
     def attack(crowbar):
         King_M.health - 30
-        print(f"Health lowered to {King_M.health}")
+        #print(f"Health lowered to {King_M.health}")
+        print(King_M.health)
     def attack(magical_wand):
         King_M.health - 100
-        print(f"Health lowered to {King_M.health}")
-              
+        #print(f"Health lowered to {King_M.health}")
+        print(King_M.health) 
         # want to know how to specify attack based on weapon
         
         
