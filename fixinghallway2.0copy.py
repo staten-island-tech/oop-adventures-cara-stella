@@ -130,8 +130,10 @@ def item_found():
                print("You run from the forest, leaving your grandmother behind to die.")
                quit()
         
-        
-        
+from weapon1enemy1 import *
+from userclass import *
+
+
 def murder():
         #comp picks random number - (1-30 = rock, 30-60 = rope, 60-90 = crowbar, 90-100 = magical wand)
         print("Your bravery is commended by the Gods! You have earned one gold coin.")
@@ -142,8 +144,9 @@ def murder():
         weapon_number = random.randint(1, 100)
         if 1<= weapon_number <= 30:
                print("You have a rock.")
-               selected_weapon = "rock"
                 #separate function for rock fight
+               
+               player.attack(rock)
         if 31<= weapon_number <= 60:
                print("You have a rope.")
                 #separate function for rope fight
