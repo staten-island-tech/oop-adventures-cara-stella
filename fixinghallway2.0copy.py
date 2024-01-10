@@ -130,8 +130,35 @@ def item_found():
                print("You run from the forest, leaving your grandmother behind to die.")
                quit()
         
-from weapon1enemy1 import *
-from userclass import *
+class weapon():
+    def __init__(self, name, damage):
+        self.name = name
+        self.damage = damage
+
+rock = weapon("rock", 5)
+rope = weapon("rope", 10)
+crowbar = weapon("crowbar", 30)
+magical_wand = weapon("magical wand", 100)
+m_wand = weapon("m wand", 50)
+
+
+class enemy():
+    def __init__(self, name, health):
+        self.name = name
+        self.health = health
+    
+King_M = enemy("King Minus", 100)
+
+class player:
+    def __init__(self, name, inventory):
+        self.name = name
+        self.inventory = inventory
+    def add(self, item):
+        self.inventory.append(item)
+        print(self.inventory)
+    def attack(weapon): #like this?
+        King_M.health -= weapon.damage
+        print(f"{King_M.health}")
 
 
 def murder():
@@ -146,17 +173,19 @@ def murder():
                print("You have a rock.")
                 #separate function for rock fight
                player.attack(rock)
-
         if 31<= weapon_number <= 60:
                print("You have a rope.")
                 #separate function for rope fight
+               player.attack(rope)
         if 61<= weapon_number <= 90:
                print("You have a crowbar!")
                 #separate function for crowbar fight
+               player.attack(crowbar)
         if 91 <= weapon_number <= 100:
                print("Holy moly, you beat the odds! You get a gold coin and a magical wand.")
                total_coins += 1
                print(f"Your total number of coins is now {total_coins}.")
+               player.attack(magical_wand)
                 #add spells or smth
         else:
                 print("my error")
