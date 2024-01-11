@@ -139,27 +139,31 @@ rock = weapon("rock", 5)
 rope = weapon("rope", 10)
 crowbar = weapon("crowbar", 30)
 magical_wand = weapon("magical wand", 100)
-m_wand = weapon("m wand", 50)
+
+class enemyweapon():
+        def __init__(self, evilname, evildamage):
+                self.evilname = evilname
+                self.evildamage = evildamage
+
+m_wand = enemyweapon("m wand", 50)
 
 
 class enemy():
     def __init__(self, name, health):
         self.name = name
         self.health = health
-    
+    def attack_player(m_wand):
+        print("King Minus uses his magical wand and readies an attack...")
+        global dodge
+        dodge = random.randint(1, 10)
+        if 1<= dodge <= 5:
+                print(f"{user} is unable to dodge the firebeam and is hit directly in the chest. This severely decreases their health...")
+                player1.health -= enemyweapon.evildamage #MAKE SURE THIS WORKS
+                print(f"{user} health has decreased to {player1.health}")
+        if 6 <= dodge <= 10:
+               print("")
+
 King_M = enemy("King Minus", 100)
-
-class player:
-    def __init__(self, name, inventory):
-        self.name = name
-        self.inventory = inventory
-    def add(self, item):
-        self.inventory.append(item)
-        print(self.inventory)
-    def attack(weapon): #like this?
-        King_M.health -= weapon.damage
-        print(f"{King_M.health}")
-
 
 def murder():
         #comp picks random number - (1-30 = rock, 30-60 = rope, 60-90 = crowbar, 90-100 = magical wand)
@@ -173,25 +177,46 @@ def murder():
                print("You have a rock.")
                 #separate function for rock fight
                player.attack(rock)
+               player_death()
         if 31<= weapon_number <= 60:
                print("You have a rope.")
                 #separate function for rope fight
                player.attack(rope)
+               #fcr()
         if 61<= weapon_number <= 90:
                print("You have a crowbar!")
                 #separate function for crowbar fight
                player.attack(crowbar)
+               #fcc()
         if 91 <= weapon_number <= 100:
                print("Holy moly, you beat the odds! You get a gold coin and a magical wand.")
                total_coins += 1
                print(f"Your total number of coins is now {total_coins}.")
                player.attack(magical_wand)
+               successful()
                 #add spells or smth
         else:
                 print("my error")
                 quit()
 
+def successful():
+        print(f"Sighing with relief, {user} stares at the fallen body. Their grandmother is released from her prison and they hug her in relief.")
+        print("What a wild day.")
 
+def player_death():
+       print("That wasn't very effective...")
+       print("He stares at you with an amused expression before brutally and mercilessly casting a spell on you with his wand-")
+       print("You are now helplessly screeching in pain as if you were brutally stung by millions of angry wasps.")
+       print("You slowly and painfully begin to pass away as King Minus and your Grandmother hug and viciously laugh at you as you leave the mortal life.")
+       print("Thanks so much for participating and playing our preppy game. Hope you enjoyed !!")
+       #written by stella
+
+def fcc():
+       print("King Minus stumbles back in shock, shocked to find that you have actually wounded him.")
+       print("He has been weakened, but had become far angrier...")
+       
+#def fcr():
+       
 
 #import random
 #from roomclass import *
@@ -244,7 +269,20 @@ if a == "no":
     print("There is an ominous, final silence.")
     exit()
             
+class player:
+    def __init__(self, name, health):
+        self.name = name
+        #self.inventory = inventory
+        self.health = health
+    def add(self, item):
+        self.inventory.append(item)
+        print(self.inventory)
+    def attack(weapon): #like this?
+        King_M.health -= weapon.damage
+        print(f"You have successfully attacked the King! King Minus' health has been lowered to {King_M.health}.")
 
+
+player1 = player(user, 100) #make sure this works
 
 
 
