@@ -147,29 +147,16 @@ class enemyweapon():
 
 m_wand = enemyweapon("m wand", 50)
 
+     
+    #hchoice = toNum(input("What hallway do you want to travel down? One, two, or three?"))
+    #if hchoice != "one" or hchoice != "two" or hchoice != "three":
+    #    print("Error, please pick an actual hallway.") #check this
+    #    pick_up()
+    #rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
+    #print(n)
+    #print(rchoice)
+    #allrooms[hchoice -1][rchoice -1].message()
 
-class enemy():
-    def __init__(self, name, health):
-        self.name = name
-        self.health = health
-    def attack_player(m_wand):
-        print("King Minus uses his magical wand and readies an attack...")
-        m_attack()
-
-def m_attack():
-        global dodge
-        dodge = random.randint(1, 10)
-        if 1<= dodge <= 5: #is there a better way to organize this
-                print(f"{user} is unable to dodge the firebeam and is hit directly in the chest. This severely decreases their health...")
-                player1.health -= enemyweapon.evildamage #MAKE SURE THIS WORKS
-                print(f"{user} health has decreased to {player1.health}")
-        if 6 <= dodge <= 10:
-               print(f"{user} successfully dodges and rolls to their feet.  They whirl around and prepare to attack again.")
-               player.attack(weapon) #check this too
-
-
-
-King_M = enemy("King Minus", 100)
 
 def murder():
         #comp picks random number - (1-30 = rock, 30-60 = rope, 60-90 = crowbar, 90-100 = magical wand)
@@ -183,7 +170,9 @@ def murder():
                print("You have a rock.")
                 #separate function for rock fight
                player.attack(rock)
-               player_death()
+               global danger
+               danger = input("You aren't doing much damage against him...luck clearly not in your favor. Do you choose to flee (a) or fight till the end (b)?")
+               rockdecision()
         if 31<= weapon_number <= 60:
                print("You have a rope.")
                 #separate function for rope fight
@@ -205,6 +194,22 @@ def murder():
                 print("my error")
                 quit()
 
+def rockdecision():
+        if danger == "a":
+                print("Eyes widening in fear, you turn tail and run, choosing to keep your own life instead of your grandmother's. GAME END")
+                exit()
+        if danger == "b":
+                print("You attack again.")
+                player.attack(rock) #or player 1?
+                print("He looks mildly annoyed and readies an attack of his own.")
+                m_attack()
+                print("Unable to move, the hero is frozen...")
+                player_death() 
+        if danger not in ["a", "b"]:
+                print("Invalid choice, please choose again.")
+                rockdecision()
+
+
 def successful():
         print(f"Sighing with relief, {user} stares at the fallen body. Their grandmother is released from her prison and they hug her in relief.")
         print("What a wild day.")
@@ -220,14 +225,12 @@ def player_death():
 def fcc():
        print("King Minus stumbles back in shock, shocked to find that you have actually wounded him.")
        print("He has been weakened, but had become far angrier...")
-       
-#def fcr():
-       
 
 #import random
 #from roomclass import *
 #from userclass import *
 #from theobjclasscode import *
+global user
 user = input("Choose your character's name.")
 #name = player(user, []) #check this
 # testing to see if the new code works here, not actual game
@@ -243,7 +246,7 @@ print("Suddenly, a mysterious figure appears from the shadows.")
 a = input("'Hello, my name is King Minus the Third. Would you like to play a game young one? If you win, you get your grandma back. Hehehe' (yes or no)")
 if a == "yes":
     import random
-    obj = random.choice(['vase','book','frog', 'umbrella','spatula', ' briefcase', 'tophat', 'necklace', 'crown' ])
+    obj = random.choice(['vase','book','frog', 'umbrella','spatula', 'briefcase', 'tophat', 'necklace', 'crown' ]) #earlier copies had " briefcase"
     print(f"You are required to find {obj} within the house. Good luck.")
     print("Before long, the mansion comes into sight. The door is unlocked.")
     hchoice = toNum(input("what hallway do you want to travel down? Type one, two, or three?")) #originally letters not num
@@ -260,14 +263,23 @@ if a == "yes":
     else:
            print("my error")
            print(hchoice)
-    #hchoice = toNum(input("What hallway do you want to travel down? One, two, or three?"))
-    #if hchoice != "one" or hchoice != "two" or hchoice != "three":
-    #    print("Error, please pick an actual hallway.") #check this
-    #    pick_up()
-    #rchoice = toNum(input(("Choose a room - one, two, or three. Remember you may have already travelled inside some.")))
-    #print(n)
-    #print(rchoice)
-    #allrooms[hchoice -1][rchoice -1].message()
+
+def m_attack():
+        global dodge
+        dodge = random.randint(1, 10)
+        if 1<= dodge <= 5: #is there a better way to organize this
+                print(f"{user} is unable to dodge the firebeam and is hit directly in the chest. This severely decreases their health...")
+                player1.health -= enemyweapon.evildamage #MAKE SURE THIS WORKS
+                print(f"{user} health has decreased to {player.health}")
+        if 6 <= dodge <= 10:
+               print(f"{user} successfully dodges and rolls to their feet.  They whirl around and prepare to attack again.")
+               player1.attack(weapon) #check this too
+#CHANGING PLAYER TO PLAYER 1?? "probably"
+
+
+King_M = enemy("King Minus", 100)
+
+
         
 
 if a == "no":
@@ -287,7 +299,29 @@ class player:
         King_M.health -= weapon.damage
         print(f"You have successfully attacked the King! King Minus' health has been lowered to {King_M.health}.")
 
+class player:
+    def __init__(self, name, health):
+        self.name = name
+        #self.inventory = inventory
+        self.health = health
+    def add(self, item):
+        self.inventory.append(item)
+        print(self.inventory)
+    def attack(weapon): #like this?
+        King_M.health -= weapon.damage
+        print(f"You have successfully attacked the King! King Minus' health has been lowered to {King_M.health}.")
 
+
+
+class enemy():
+    def __init__(self, name, health):
+        self.name = name
+        self.health = health
+    def attack_player(m_wand):
+        print("King Minus uses his magical wand and readies an attack...")
+        m_attack()
+
+global player1
 player1 = player(user, 100) #make sure this works
 
 
