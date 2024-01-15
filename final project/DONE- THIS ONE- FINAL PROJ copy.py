@@ -232,19 +232,18 @@ def m_attack2():
                 print(f"{user} is unable to dodge the firebeam and is hit directly in the chest. This severely decreases their health...")
                 player1.health -= m_wand.evildamage #MAKE SURE THIS WORKS
                 print(f"{user} health has decreased to {player1.health}")
+                print(f"Adrenaline surging, {user} manages one more heavy hit-")
+                player1.attack(magical_wand)
+                successful()
         if 6 <= dodge <= 10:
                print(f"{user} successfully dodges and rolls to their feet.  They whirl around and prepare to attack again.")
                player1.attack(crowbar)
                print(f"Adrenaline surging, {user} manages one more heavy hit-")
                player1.attack(magical_wand)
+               successful()
 def fcc():
         print("You've gotten a powerful hit in, but M has become far angrier.")
         m_attack2()
-        if King_M.health == 0:
-               print("Gritting his teeth in pain, he has no energy left. He vanishes in a poof of green.")
-               print("You have finally won.")
-               exit()
-
 
 
 def successful():
