@@ -1,5 +1,3 @@
-
-
 from weapon1enemy1 import *
 class enemy():
     def __init__(self, name, health):
